@@ -5,7 +5,7 @@ import Modal from 'react-modal';
 import {useTable} from "react-table"; 
 import axios from 'axios';
 
-function SearchModule() {
+function ManageModule() {
     
     const [data, setData] = useState([]);
     const [openModal, setOpenModal] = useState(false);
@@ -130,17 +130,17 @@ function SearchModule() {
             <NavBar/>
                 <div className="formsSquare">
                     <h1>BUSQUEDA DE PELICULAS</h1>
-                    <h2 style={{position:"absolute", top:"200px", left:"260px"}}>TITULO</h2>
-                    <input onChange={(e) => {setTitulo(e.target.value)}} style={{position:'absolute', width:"250px", height:"50px", top:"270px", left:"180px"}}></input>
+                    <h2 style={{position:"absolute", top:"120px", left:"270px"}}>TITULO</h2>
+                    <input className='manageFormInput' onChange={(e) => {setTitulo(e.target.value)}} style={{position:'absolute', width:"250px", height:"40px", top:"170px", left:"180px"}}></input>
 
-                    <h2 style={{position:"absolute", top:"200px", left:"640px"}}>IDIOMA</h2>
-                    <input onChange={(e) => {setIdioma(e.target.value)}} style={{position:'absolute', width:"250px", height:"50px", top:"270px", left:"550px"}}></input>
+                    <h2 style={{position:"absolute", top:"120px", left:"645px"}}>IDIOMA</h2>
+                    <input className='manageFormInput' onChange={(e) => {setIdioma(e.target.value)}} style={{position:'absolute', width:"250px", height:"40px", top:"170px", left:"550px"}}></input>
 
-                    <h2 style={{position:"absolute", top:"350px", left:"260px"}}>FECHA</h2>
-                    <input value={fecha} onChange={(e) => {setFecha(e.target.value)}} type="date" style={{position:'absolute', width:"250px", height:"50px", top:"420px", left:"180px"}}></input>
+                    <h2 style={{position:"absolute", top:"270px", left:"270px"}}>FECHA</h2>
+                    <input className='manageFormInput' value={fecha} onChange={(e) => {setFecha(e.target.value)}} type="date" style={{position:'absolute', width:"250px", height:"40px", top:"320px", left:"180px", textAlign:"center"}}></input>
 
-                    <h2 style={{position:"absolute", top:"350px", left:"640px"}}>GENERO</h2>
-                    <select  className="selectGenre" onChange={(e) => {setGenero(e.target.value)}} style={{position:"absolute",top:"420px", left:"550px", textAlign:"center"}}>
+                    <h2 style={{position:"absolute", top:"270px", left:"645px"}}>GENERO</h2>
+                    <select  className="selectGenre" onChange={(e) => {setGenero(e.target.value)}} style={{position:"absolute",top:"320px", left:"555px", textAlign:"center"}}>
                         <option></option>
                         <option>DRAMA</option>
                         <option>ACCION</option>
@@ -150,12 +150,12 @@ function SearchModule() {
                         <option>TERROR</option>
                     </select>
                 
-                    <button className="buttons" onClick={busqueda} style={{top: "600px", left:"350px"}}>BUSCAR</button>
+                    <button className="buttons" onClick={busqueda} style={{top: "500px", left:"350px"}}>BUSCAR</button>
                     <div className="resultsSquare">
                         <table className="resultsTable" style={{position:"absolute"}} {...getTableProps()}>
                             <thead>
                                 {headerGroups.map((headerGroup)=> (
-                                    <tr {...headerGroup.getHeaderGroupProps()} className="table-header">
+                                    <tr {...headerGroup.getHeaderGroupProps()} >
                                         {headerGroup.headers.map((column) => (
                                             <th style={{position: "sticky"}} {...column.getHeaderProps()}>
                                                 {column.render("Header")}
@@ -177,7 +177,7 @@ function SearchModule() {
                                                     
                                                 </td>
                                             ))}
-                                            <div style={{width:"400px"}}>
+                                            <div className='options'>
                                                 <button className="resultButtons" onClick={() => handleRowClick(row, true)}>VER DETALLES</button>
                                                 <button className="modifyButtons" onClick={() => handleRowClick(row, false)}>MODIFICAR</button>
                                                 <button className="deleteButtons" onClick={() => handleRowDelete(row)}>ELIMINAR</button>
@@ -194,4 +194,4 @@ function SearchModule() {
         </div>
     );
 }
-export default SearchModule;
+export default ManageModule;

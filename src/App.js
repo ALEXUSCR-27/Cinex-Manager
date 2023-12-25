@@ -1,5 +1,5 @@
 import MainScreen from './components/MainScreen.js';
-import SearchModule from './components/SearchModule.js';
+import ManageModule from './components/ManageModule.js';
 import AddModule from './components/AddModule.js';
 
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
@@ -10,10 +10,10 @@ function App() {
     <BrowserRouter>
         <Routes>
             <Route exact path = "/" element = {<MainScreen/>}/>
-            <Route exact path = "/buscarpeliculas" element = {<SearchModule/>}/>
+            <Route exact path = "/buscarpeliculas" element = {<ManageModule/>}/>
             <Route exact path = "/agregarpeliculas" element = {<AddModule/>}/>
-            <Route exact path = "/modificarpeliculas" element = {<SearchModule/>}/>
-            <Route exact path = "/eliminarpeliculas" element = {<SearchModule/>}/>
+            <Route exact path = "/modificarpeliculas" element = {<ManageModule/>}/>
+            <Route exact path = "/eliminarpeliculas" element = {<ManageModule/>}/>
         </Routes>
     </BrowserRouter>
   );
