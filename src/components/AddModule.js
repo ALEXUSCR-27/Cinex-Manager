@@ -1,4 +1,4 @@
-import './style/components.css';
+import '../styles/components.css';
 import NavBar from './NavBar';
 import axios from 'axios';
 import { useState } from 'react';
@@ -43,7 +43,7 @@ function AddModule() {
     }
 
     const validacion = () => {
-        return !(titulo == "" || idioma == "" || director == "" || genero == "" || duracion == 0 || edad == 0);
+        return !(titulo === "" || idioma === "" || director === "" || genero === "" || duracion === 0 || edad === 0);
     }
     
     return (

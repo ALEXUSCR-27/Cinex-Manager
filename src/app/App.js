@@ -1,6 +1,6 @@
-import MainScreen from './components/MainScreen.js';
-import SearchModule from './components/SearchModule.js';
-import AddModule from './components/AddModule.js';
+import MainScreen from '../components/MainScreen.js';
+import SearchModule from '../components/SearchModule.js';
+import AddModule from '../components/AddModule.js';
 
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import React from 'react';

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './style/components.css';
+import '../styles/components.css';
 import NavBar from './NavBar';
 
 function MainScreen() {
