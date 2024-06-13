@@ -1,0 +1,20 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    margin: auto;
+    overflow: hidden;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    content: url(/src/assets/images/mainpage.png) url(/src/assets/images/movie1.jpg) url(/src/assets/images/movie3.jpg)
+    url(/src/assets/images/movie5.jpg) url(/src/assets/images/movie2.jpg) url(/src/assets/images/movie4.jpg) url(/src/assets/images/movie6.jpeg)
+    url(/src/assets/images/movie7.jpg) url(/src/assets/images/movie8.jpg) url(/src/assets/images/movie9.jpg)
+    url(/src/assets/images/movie10.jpg) url(/src/assets/images/movie0.jpg)
+    ;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
