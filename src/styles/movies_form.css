@@ -1,0 +1,83 @@
+.addMovie {
+    height: 100vh;
+    max-width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 1.2),rgba(0, 0, 0, 0.6)), url(/src/assets/images/fondo2.png);
+}
+
+.addMovie__container {
+    position: relative;
+    max-width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.644);
+
+}
+
+.addMovie__container_formBox {
+    position: relative;
+    overflow-y: hidden;
+    
+    justify-content: center;
+    background-color: #1C1C1C;
+
+    left: 25%;
+    top: 10%;
+    max-width: 50%;
+    height: 70%;
+}
+
+.formBox_forms {
+    position: relative;
+    overflow-y: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    background-color: #1C1C1C;
+    max-width: 100%;
+    height: 70%;
+}
+.addMovie__container_formBox h2 {
+    font-size: 14pt;
+}
+
+.formBox_buttons {
+    padding-top: 10%;
+}
+
+.formBox_buttons button {
+    position: relative;
+    justify-content: center;
+    font-weight: bold;
+    width: 200px;
+    height: 50px;
+    left: 38%;
+    cursor:pointer;
+}
+
+.formBox_form {
+    padding-top: 100px;
+}
+
+.formBox_form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+.formBox_form select {
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.formBox_form input {
+    border-radius: 5px;
+    font-size: 18px;
+    
+}
+
+.formBox_form input[type="number"] {
+    width: 150px;
+}

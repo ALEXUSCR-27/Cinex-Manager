@@ -2,8 +2,9 @@ import '../styles/components.css';
 import NavBar from './NavBar';
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import {useTable} from "react-table"; 
-import axios from 'axios';
+import {useTable} from "react-table";
+
+import { searchMovies, deleteMovie } from '../services/movies';
 
 function SearchModule() {
     
@@ -12,14 +13,11 @@ function SearchModule() {
     const [actual, setActual] = useState([]);
     const [estadoInput, setEstadoInput] = useState(false);
 
-    const [peliculaID, setPeliculaID] = useState("");
+
     const [titulo, setTitulo] = useState("");
-    const [edad, setEdad] = useState("");
     const [idioma, setIdioma] = useState("");
-    const [director, setDirector] = useState("");
     const [fecha, setFecha] = useState("1901-01-01");
     const [genero, setGenero] = useState("");
-    const [duracion, setDuracion] = useState(0);
 
 
     const setValues = (results) => {
@@ -38,21 +36,28 @@ function SearchModule() {
         setOpenModal(value);
     }
 
-    const busqueda = () => {
+    const busqueda = async () => {
         setRes([]);
-        axios.post("http://localhost:3307/buscarpeliculas", {
+        const movieAttr = {
             titulo:titulo,
             idioma:idioma,
             fecha:fecha,
             genero:genero,
-        }).then((response) => {
-            console.log(response.data[0].length);
-            setRes(response.data[0]);
-            if (response.data[0].length == 0) {
-                alert("SIN RESULTADOS!!");
-            }
-        });
-        
+        }
+
+        const request_response = await searchMovies(movieAttr);
+        if (request_response.status === 200) {
+            setRes(request_response.data[0])
+        }
+    }
+
+    const handleRowDelete = async (row) => {
+        const movieID = {peliculaID:row.original.peliculaID}
+        const request_reponse = await deleteMovie(movieID);
+        if (request_reponse.status === 200) {
+            alert("LA PELICULA CON EL ID "+row.id+" FUE ELIMINADA DE FORMA EXITOSA!!");
+            window.location.reload(true);
+        }
     }
 
     const columns = React.useMemo( () => [
@@ -77,18 +82,6 @@ function SearchModule() {
         console.log("ID:", row.original);
         
     };
-
-    const handleRowDelete = (row) => {
-        console.log(row.original.id)
-        axios.post("http://localhost:3307/eliminarPelicula", {
-            peliculaID:row.original.peliculaID
-        }).then((response) => {
-            console.log(response);
-            window.location.reload(true);
-
-        });
-        alert("LA PELICULA CON EL ID "+row.id+" FUE ELIMINADA DE FORMA EXITOSA!!");
-    }
 
     return (
         <div>
