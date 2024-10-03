@@ -1,0 +1,92 @@
+.movie_form_container {
+    height: 100vh;
+    max-width: 100%;
+    font-family: "Roboto", sans-serif;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+._movie_title_container {
+    margin-left: 20%;
+    margin-top: 15%;
+}
+
+
+._form {
+    background-color: #221f1f;
+    height: 60%;
+    margin-left: 10%;
+    max-width: 60%;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 10%;
+}
+
+._inputs_container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    position: relative;
+    justify-items: center;
+    align-items: center;
+}
+._input_group {
+    padding-top: 40px;
+
+}
+
+._input_group label {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+._input_group select {
+    width: 220px;
+    height: 42px;
+}
+
+._input_group input, select {
+    background-color: transparent;
+    border-radius: 3px;
+    border: 1px solid #6d6b6b;
+    box-sizing: border-box;
+    color: aliceblue;
+    font-size: 15px;
+    height: 42px;
+    padding: 10px;
+    
+}
+
+._input_group input[type="number"] {
+    width: 220px;
+
+}
+
+._input_group input[type="date"] {
+    width: 220px;
+}
+option {
+    color: black;
+}
+
+._button_container {
+    padding-top: 10%;
+    text-align: center;
+}
+
+._button_container button {
+    cursor:pointer;
+    background-color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    grid-column: span 2;
+    height: 50px;
+    position: relative;
+    width: 200px;
+    border-radius: 3px;
+    border: 1px solid #6d6b6b
+}
