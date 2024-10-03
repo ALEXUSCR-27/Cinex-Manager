@@ -1,9 +1,9 @@
+import React from 'react';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+
 import MainScreen from '../components/main_screen/main_screen.js';
 import SearchModule from '../components/SearchMovieForm.js';
 import AddModule from '../components/AddMovieForm.js';
-
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import React from 'react';
 import NavBar from '../components/navbar/navbar.js';
 
 function App() {
