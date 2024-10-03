@@ -3,7 +3,7 @@
     max-width: 100%;
     background-size: cover;
     background-position: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 1.2),rgba(0, 0, 0, 0.6)), url(/src/assets/images/fondo2.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 1.2),rgba(0, 0, 0, 0.6)), url(/public/images/fondo2.png);
 }
 
 .addMovie__container {

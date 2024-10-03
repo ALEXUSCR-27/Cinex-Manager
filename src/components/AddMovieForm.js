@@ -1,7 +1,7 @@
 import '../styles/components.css';
 import '../styles/movies_form.css';
 
-import NavBar from './NavBar';
+import NavBar from './navbar/navbar';
 import { useState } from 'react';
 
 import { addMovie } from '../services/movies';

@@ -1,89 +1,4 @@
-.principalFont {
-    height: 100vh;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.932),rgba(0, 0, 0, 0.692)), url(/src/assets/images/mainpage.png);
-}
 
-.moviesSquare {
-    position: absolute;
-    width: 512px;
-    height: 767px;
-    left: 180px;
-    top: 120px;
-    
-
-    background-image: url(/src/assets/images/movie0.jpg);
-    background-size:contain;
-    background-position: center;
-
-    border-radius: 20px;
-
-    transition: 100s;
-
-    animation-name: animated-movies;
-    animation-direction:normal;
-    animation-duration: 40s;
-    animation-delay: 1s;
-
-    animation-fill-mode:forwards;
-    animation-iteration-count: infinite;
-    animation-play-state:running;
-    animation-timing-function:ease;
-    
-
-}
-
-@keyframes animated-movies {
-    0% {background-image: url(/src/assets/images/movie0.jpg);}
-    10% {background-image: url(/src/assets/images/movie1.jpg);}
-    20% {background-image: url(/src/assets/images/movie2.jpg);}
-    30% {background-image: url(/src/assets/images/movie3.jpg);}
-    40% {background-image: url(/src/assets/images/movie4.jpg);}
-    50% {background-image: url(/src/assets/images/movie5.jpg);}
-    60% {background-image: url(/src/assets/images/movie6.jpeg);}
-    70% {background-image: url(/src/assets/images/movie7.jpg);}
-    80% {background-image: url(/src/assets/images/movie8.jpg);}
-    90% {background-image: url(/src/assets/images/movie9.jpg);}
-    100% {background-image: url(/src/assets/images/movie10.jpg);}
-
-}
-
-.crudSquare {
-    position: absolute;
-    width: 700px;
-    height: 767px;
-    left: 1100px;
-    top: 120px;
-    background-color: black;
-    opacity: 0.9;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    box-shadow: 
-    1px 1px 1px 1px rgba(0, 0, 0, 0.2), /* Sombra superior e izquierda */
-    1px 1px 1px 1px rgba(82, 5, 5, 0.966);
-}
-
-.logo {
-    background-image: url(/src/assets/images/logo.png);
-    background-size:250px;
-    background-position: center;
-    position: absolute;
-    left: 9%;
-    width:250px;
-    height: 70px;
-    
-}
-
-h1 {
-    font-family:'Trebuchet MS', sans-serif;
-    font-size:40px;
-    color: rgb(255, 255, 255);
-    font-style: bold;
-    text-align: center;
-}
 
 h2 {
     font-family:'Trebuchet MS', sans-serif;
@@ -92,24 +7,6 @@ h2 {
     text-align: center;
 }
 
-
-.buttons {
-    position: absolute;
-    width: 300px;
-    height: 50px;
-    font-family:'Trebuchet MS', sans-serif;
-    border: 0px;
-    font-style: bold;
-    color: aliceblue;
-    font-size:20px;
-    background-color:rgba(255, 0, 0, 0.596);
-    border-radius: 5px;
-    box-shadow: 
-    1px 1px 1px 1px rgba(0, 0, 0, 0.2), 
-    1px 1px 1px 1px rgba(36, 2, 2, 0.966);
-
-    cursor:pointer;
-}
 
 .resultButtons {
     background-color:rgba(5, 5, 29, 0.596);
@@ -140,7 +37,7 @@ h2 {
     width: 100%;
     background-size: cover;
     background-position: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 1)), url(/src/assets/images/fondo2.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 1)), url(/public/images/fondo2.png);
 }
 
 
@@ -253,15 +150,6 @@ tbody tr {
   ::-webkit-scrollbar-thumb:hover {
     background: #8d0c0c;
   }
-.NavBar {
-    background-color:rgba(0, 0, 0, 0.644);
-    border-radius: 1px;
-    border-color: #8d0c0c;
-    width: 100%;
-    height: 70px;
-
-    
-}
   .resultModal {
     width: 1200px;
     height: 700px;
@@ -274,15 +162,7 @@ tbody tr {
 
   }
 
-  .navButton {
-    background-color: #00000000;
-    border: 0;
-    color: aliceblue;
-    font-family:'Trebuchet MS', sans-serif;
-    font-style: bold;
-    font-size: 20px;
-    
-  }
+
 
 .inputModal {
     background-color:rgba(112, 107, 107, 0.521);

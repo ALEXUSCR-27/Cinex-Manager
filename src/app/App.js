@@ -1,13 +1,15 @@
-import MainScreen from '../components/MainScreen.js';
+import MainScreen from '../components/main_screen/main_screen.js';
 import SearchModule from '../components/SearchMovieForm.js';
 import AddModule from '../components/AddMovieForm.js';
 
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import React from 'react';
+import NavBar from '../components/navbar/navbar.js';
 
 function App() {
   return (
-    <BrowserRouter>
+      <BrowserRouter>
+        <NavBar/>
         <Routes>
             <Route exact path = "/" element = {<MainScreen/>}/>
             <Route exact path = "/buscarpeliculas" element = {<SearchModule/>}/>
