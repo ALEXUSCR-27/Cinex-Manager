@@ -59,7 +59,7 @@ function AddMovieForm() {
                 <div className='_movie_title_container'>
                     <h1>ADD MOVIES</h1>
                 </div>
-                <div className='_form_container'>
+                <div>
                     <div className="_form">
                         <div className="_inputs_container">
                             <div className="_input_group">

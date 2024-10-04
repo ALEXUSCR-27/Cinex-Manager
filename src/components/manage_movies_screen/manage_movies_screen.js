@@ -1,10 +1,9 @@
 
-import NavBar from './navbar/navbar';
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import {useTable} from "react-table";
-
-import { searchMovies, deleteMovie } from '../services/movies';
+import './manage_movies_screen.css'
+import { searchMovies, deleteMovie } from '../../services/movies';
 
 function SearchModule() {
     
@@ -85,7 +84,6 @@ function SearchModule() {
 
     return (
         <div>
-            
             <Modal className= "resultModal" isOpen = {openModal}>
                 <div>
                     <h1>DETALLES DE PELICULA</h1>
@@ -119,68 +117,94 @@ function SearchModule() {
                     <button className='buttons' style={{position: 'absolute', top:"85%", left:"37%"}} onClick={() => showModal(false)}>CERRAR</button>
                 </div>
             </Modal>
-            <div className="operativeFont">
-            <NavBar/>
-                <div className="formsSquare">
-                    <h1>BUSQUEDA DE PELICULAS</h1>
-                    <h2 style={{position:"absolute", top:"200px", left:"260px"}}>TITULO</h2>
-                    <input onChange={(e) => {setTitulo(e.target.value)}} style={{position:'absolute', width:"250px", height:"50px", top:"270px", left:"180px"}}></input>
-
-                    <h2 style={{position:"absolute", top:"200px", left:"640px"}}>IDIOMA</h2>
-                    <input onChange={(e) => {setIdioma(e.target.value)}} style={{position:'absolute', width:"250px", height:"50px", top:"270px", left:"550px"}}></input>
-
-                    <h2 style={{position:"absolute", top:"350px", left:"260px"}}>FECHA</h2>
-                    <input value={fecha} onChange={(e) => {setFecha(e.target.value)}} type="date" style={{position:'absolute', width:"250px", height:"50px", top:"420px", left:"180px"}}></input>
-
-                    <h2 style={{position:"absolute", top:"350px", left:"640px"}}>GENERO</h2>
-                    <select  className="selectGenre" onChange={(e) => {setGenero(e.target.value)}} style={{position:"absolute",top:"420px", left:"550px", textAlign:"center"}}>
-                        <option></option>
-                        <option>DRAMA</option>
-                        <option>ACCION</option>
-                        <option>COMEDIA</option>
-                        <option>FANTASIA</option>
-                        <option>SUSPENSO</option>
-                        <option>TERROR</option>
-                    </select>
-                
-                    <button className="buttons" onClick={busqueda} style={{top: "600px", left:"350px"}}>BUSCAR</button>
-                    <div className="resultsSquare">
-                        <table className="resultsTable" style={{position:"absolute"}} {...getTableProps()}>
-                            <thead>
-                                {headerGroups.map((headerGroup)=> (
-                                    <tr {...headerGroup.getHeaderGroupProps()} className="table-header">
-                                        {headerGroup.headers.map((column) => (
-                                            <th style={{position: "sticky"}} {...column.getHeaderProps()}>
-                                                {column.render("Header")}
-                                            </th>
-                                            
+            <div className="manage_movies_container">
+                <div className="_movies_table_container">
+                    <table className="_movies_table"  {...getTableProps()}>
+                        <thead>
+                            {headerGroups.map((headerGroup)=> (
+                                <tr {...headerGroup.getHeaderGroupProps()} className="_table_header">
+                                    {headerGroup.headers.map((column) => (
+                                        <th {...column.getHeaderProps()}>
+                                            {column.render("Header")}
+                                        </th>
+                                        
+                                    ))}
+                                    <th>OPCIONES </th>
+                                </tr>
+                            ))}
+                        </thead>
+                        <tbody {...getTableBodyProps()}>
+                            {rows.map((row) => {
+                                prepareRow(row);
+                                return(
+                                    <tr {...row.getRowProps()}>
+                                        {row.cells.map((cell) => (
+                                            <td {...cell.getCellProps()}>
+                                                {cell.render("Cell")}
+                                                
+                                            </td>
                                         ))}
-                                        <th>OPCIONES </th>
+                                        <div style={{width:"400px"}}>
+                                            <button className="resultButtons" onClick={() => handleRowClick(row, true)}>VER DETALLES</button>
+                                            <button className="modifyButtons" onClick={() => handleRowClick(row, false)}>MODIFICAR</button>
+                                            <button className="deleteButtons" onClick={() => handleRowDelete(row)}>ELIMINAR</button>
+                                        </div>
                                     </tr>
-                                ))}
-                            </thead>
-                            <tbody {...getTableBodyProps()}>
-                                {rows.map((row) => {
-                                    prepareRow(row);
-                                    return(
-                                        <tr {...row.getRowProps()}>
-                                            {row.cells.map((cell) => (
-                                                <td {...cell.getCellProps()}>
-                                                    {cell.render("Cell")}
-                                                    
-                                                </td>
-                                            ))}
-                                            <div style={{width:"400px"}}>
-                                                <button className="resultButtons" onClick={() => handleRowClick(row, true)}>VER DETALLES</button>
-                                                <button className="modifyButtons" onClick={() => handleRowClick(row, false)}>MODIFICAR</button>
-                                                <button className="deleteButtons" onClick={() => handleRowDelete(row)}>ELIMINAR</button>
-                                            </div>
-                                        </tr>
-                                    );
-                                })}
+                                );
+                            })}
 
-                            </tbody>
-                        </table>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <div className="_form_container">
+                        <div className='_inputs_container'>
+                            <div className="_input_group">
+                                <label for="title">Title</label>
+                                <input 
+                                    id="title" 
+                                    name="title" 
+                                    onChange={(e) => {setTitulo(e.target.value)}}
+                                ></input>
+                            </div>
+                            <div className="_input_group">
+                                <label for="language">Language</label>
+                                <input 
+                                    id="language" 
+                                    name="language"
+                                    onChange={(e) => {setIdioma(e.target.value)}}
+                                ></input>
+                            </div>
+
+                            <div className="_input_group">
+                                <label for="genre">Genre</label>
+                                <select id="genre" name="genre" onChange={(e) => {setGenero(e.target.value)}} >
+                                    <option></option>
+                                    <option>DRAMA</option>
+                                    <option>ACCION</option>
+                                    <option>COMEDIA</option>
+                                    <option>FANTASIA</option>
+                                    <option>SUSPENSO</option>
+                                    <option>TERROR</option>
+                                </select>
+                            </div>
+                            <div className="_input_group">
+                                <label for="release_date">Release Date</label>
+                                <input
+                                    id="release_date" 
+                                    name="release_date" 
+                                    onChange={(e) => {setFecha(e.target.value)}} 
+                                    type='date'
+                                ></input>
+                            </div>
+                        
+                        </div>
+                        <div className='_button_container'>
+                            <button 
+                                className="_search_button" 
+                                onClick={busqueda}
+                            >BUSCAR</button>
+                        </div>
                     </div>
                 </div>
             </div>

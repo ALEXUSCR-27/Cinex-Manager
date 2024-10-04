@@ -4,7 +4,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import AddMovie from '../components/add_movie_screen/add_movie_screen.js';
 import MainScreen from '../components/main_screen/main_screen.js';
 import NavBar from '../components/navbar/navbar.js';
-import SearchModule from '../components/SearchMovieForm.js';
+import SearchModule from '../components/manage_movies_screen/manage_movies_screen.js';
 
 function App() {
   return (
