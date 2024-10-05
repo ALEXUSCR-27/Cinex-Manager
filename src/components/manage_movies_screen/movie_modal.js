@@ -1,54 +1,117 @@
 import Modal from 'react-modal';
-function MovieModal({movie, open, flag, onClose}) {
+function MovieModal({
+    open, 
+    flag, 
+    onClose,
+    title,
+    language,
+    genre,
+    release_date,
+    mpa_age,
+    running_time,
+    director,
+    id,
+    onChange_director,
+    onChange_duration,
+    onChange_age,
+    onChange_release_date,
+    onChange_genre,
+    onChange_language,
+    onChange_title
+}) {
     return (
-        <Modal className= "movie_modal" isOpen = {open}>
-                <div className='_modal_title_continer'>
-                    <h3>DETALLES DE PELICULA</h3>
-                </div>
-                <div className='_modal_inputs'>
-                    <div className='_inputs_container'>
-                        <div className='_input_group_modal'>
-                            <label>GENERO</label>
-                            <input className="inputModal" disabled={flag} value={movie.genero}></input>
-                        </div>
-                        <div className='_input_group_modal'>
-                            <label>IDENTIFICADOR:</label>
-                            <input className="inputModal" disabled={flag} value={movie.peliculaID}></input>
-                        </div>
-                        <div className='_input_group_modal'>
-                            <label>TITULO:</label>
-                            <input className="inputModal" disabled={flag} value={movie.titulo}></input>
-                        </div>
-                        <div className='_input_group_modal'>
-                            
-                            <label>DIRECTOR:</label>
-                            <input className="inputModal" disabled={flag} value={movie.director}></input>
-                        </div>
-                        <div className='_input_group_modal'>
-                            <label>IDIOMA:</label>
-                            <input className="inputModal" disabled={flag} value={movie.idioma}></input>
-                            
-                        </div>
-                        <div className='_input_group_modal'>
-                            <label>EDAD REQUERIDA:</label>
-                            <input className="inputModal" disabled={flag} value={movie.edadRequerida}></input>
-                            
-                        </div>
-                        <div className='_input_group_modal'>
-                            <label>FECHA DE ESTRENO:</label>
-                            <input className="inputModal" disabled={flag} value={movie.fechaEstreno}></input>
-                            
-                        </div>
-                        <div className='_input_group_modal'>
-                            <label>DURACION:</label>
-                            <input className="inputModal" disabled={flag} value={movie.duracionMin}></input>
-                        </div>
+        <Modal 
+            className= "movie_modal" 
+            isOpen = {open} 
+            style={{
+                overlay: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.80)'
+                }
+            }}
+        >
+            <div className='_modal_title_continer'>
+                <h3>Movie Details ID [{id}]</h3>
+            </div>
+            <div className='_modal_inputs'>
+                <div className='_inputs_container'>
+                    <div className='_input_group_modal'>
+                        <label>Genre</label>
+                        <input 
+                            className="inputModal" 
+                            disabled={flag} 
+                            value={genre}
+                            onChange={(e) => onChange_genre(e.target.value)}
+                        ></input>
+                    </div>
+                    <div className='_input_group_modal'>
+                        <label>Title:</label>
+                        <input 
+                            className="inputModal" 
+                            disabled={flag} 
+                            value={title}
+                            onChange={(e) => onChange_title(e.target.value)}
+                        ></input>
+                    </div>
+                    <div className='_input_group_modal'>
+                        <label>Director:</label>
+                        <input 
+                            className="inputModal" 
+                            disabled={flag} 
+                            value={director}
+                            onChange={(e) => onChange_director(e.target.value)}
+                        ></input>
+                    </div>
+                    <div className='_input_group_modal'>
+                        <label>Language:</label>
+                        <input 
+                            className="inputModal" 
+                            disabled={flag} 
+                            value={language}
+                            onChange={(e) => onChange_language(e.target.value)}
+                        ></input>
+                        
+                    </div>
+                    <div className='_input_group_modal'>
+                        <label>MPA Age:</label>
+                        <input
+                            type='number' 
+                            className="inputModal" 
+                            disabled={flag} 
+                            value={mpa_age}
+                            onChange={(e) => onChange_age(e.target.value)}
+                        ></input>
+                        
+                    </div>
+                    <div className='_input_group_modal'>
+                        <label>Release date:</label>
+                        <input 
+                            type='datetime'
+                            className="inputModal" 
+                            disabled={flag} 
+                            value={release_date}
+                            onChange={(e) => onChange_release_date(e.target.value)}
+                        ></input>
+                        
+                    </div>
+                    <div className='_input_group_modal'>
+                        <label>Running time:</label>
+                        <input
+                            type='number'
+                            className="inputModal" 
+                            disabled={flag} 
+                            value={running_time}
+                            onChange={(e) => onChange_duration(e.target.value)}
+                        ></input>
                     </div>
                 </div>
-                <div className='_button_container'>
-                    <button className='_search_button' onClick={() => onClose(false)}>CERRAR</button>
-                </div>
-            </Modal>
+            </div>
+            <div className='_button_container_modal'>
+                <button className='_search_button' onClick={() => onClose(false)}>Close</button>
+                { !flag && (
+                    <button className='_modify_button' onClick={() => onClose(false)}>Modify</button>
+                )}
+            </div>
+        </Modal>
     );
 
 }

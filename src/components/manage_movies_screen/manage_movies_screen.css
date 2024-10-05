@@ -1,11 +1,10 @@
 .manage_movies_container {
+    display: grid;
+    font-family: "Roboto", sans-serif;
+    grid-template-columns: 60% 40%;
     height: 100vh;
     max-width: 100%;
-    display: grid;
-    grid-template-columns: 60% 40%;
-    font-family: "Roboto", sans-serif;
 }
-
 
 ._manage_title_container {
     margin-left: 20%;
@@ -31,58 +30,66 @@
     justify-items: center;
     align-items: center;
 }
-._search_button {
-    cursor:pointer;
-    background-color: white;
-    font-family: "Roboto", sans-serif;
-    font-weight: 600;
-    font-size: 17px;
-    grid-column: span 2;
-    height: 50px;
-    position: relative;
-    width: 100px;
+
+._search_button, ._modify_button {
+    background-color: #ECDFCC;
     border-radius: 3px;
-    border: 1px solid #6d6b6b
+    border: 0px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    grid-column: span 2;
+    height: 30px;
+    position: relative;
+    width: 90px;
 }
 
-._button_container {
+._modify_button {
+    margin-left: 10px;
+}
+._button_container, ._button_container_modal {
     padding-top: 10%;
     text-align: center;
 }
 
+._button_container_modal {
+    justify-content: space-between;
+}
+
 ._table_tr{
-    position:sticky;
-    top: 0;
-    font-size: 15px;
     border-radius: 10px;
     color: #a7a4a4;
+    font-size: 15px;
+    position:sticky;
+    top: 0;
 }
 
 ._movies_table_container {
-    margin-top: 10%;
-    margin-left: 10%;
-    width: 1000px;
-    height: 70%;
-    overflow-x: hidden;
     background-color: #221f1f;
+    height: 70%;
+    margin-left: 10%;
+    margin-top: 10%;
+    overflow-x: hidden;
+    width: 1000px;
 }
 
 ._movies_table {
+    border-collapse: collapse;
     color: rgb(255, 255, 255);
-    position: relative;
     font-family: "Roboto", sans-serif;
     font-size: 15px;
-    width: 100%;
-    border-collapse: collapse;
     max-height: 100%;
+    position: relative;
     text-align: center;    
+    width: 100%;
 }
 
 ._movies_table th {
     height: 50px;
     background-color: #221f1f;
-    
 }
+
 ._movies_table tr {
     border-bottom: 1px solid rgba(128, 128, 128, 0.418);
     height: 50px;
@@ -97,27 +104,26 @@
 }
 
 ._options_buttons_container {
-    font-size: 15px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    font-size: 15px;
     gap: 10px;
+    justify-content: center;
 
 }
 
 .movie_modal {
-    font-family: "Roboto", sans-serif;
-    font-size: 15px;
-    width: 600px;
-    height: 600px;
     background-color: #221f1f;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     border-radius: 5px;
     color: white;
-
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    height: 600px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
 }
 
 ._modal_title_continer {
@@ -129,22 +135,40 @@
 }
 
 ._input_group_modal input {
-    position: relative;
     background-color: transparent;
     border-radius: 3px;
     border: 1px solid #6d6b6b;
     color: aliceblue;
     font-size: 15px;
     height: 42px;
-    padding: 5px;
+    padding-left: 5px;
+    position: relative;
 }
 
 ._input_group_modal label {
+    color: white;
     display: block;
     margin-bottom: 0.5rem;
-    color: white;
 }
 
 ._input_group_modal input[type="date"], input[type="number"] {
-    width: 220px;
+    width: 190px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(62, 62, 63);
+    border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d4d3d3;
+    border-radius: 40px;
+}
+    
+::-webkit-scrollbar-thumb:hover {
+    background: #8d0c0c;
 }

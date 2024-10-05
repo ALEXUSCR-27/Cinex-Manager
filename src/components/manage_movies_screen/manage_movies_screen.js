@@ -1,7 +1,5 @@
 
 import React, { useState } from 'react';
-import Modal from 'react-modal';
-import {useTable} from "react-table";
 import './manage_movies_screen.css'
 import MovieModal from './movie_modal';
 import { searchMovies, deleteMovie } from '../../services/movies';
@@ -19,9 +17,28 @@ function SearchModule() {
     const [fecha, setFecha] = useState("1901-01-01");
     const [genero, setGenero] = useState("");
 
+    const [id, setID] = useState(0)
+    const [director_modal, setDirector_modal] = useState("");
+    const [running_time_modal, setDuracion_modal] = useState(0);
+    const [mpa_age_modal, setEdad_modal] = useState(0);
+    const [release_date_modal, setFecha_modal] = useState("1901-01-01");
+    const [genre_modal, setGenero_modal] = useState("");
+    const [language_modal, setIdioma_modal] = useState("");
+    const [title_modal, setTitulo_modal] = useState("");
+    
+
 
     const setValues = (results) => {
         setActual(results);
+
+        setID(results.peliculaID)
+        setDirector_modal(results.director);
+        setDuracion_modal(results.duracionMin);
+        setEdad_modal(results.edadRequerida);
+        setFecha_modal(results.fechaEstreno);
+        setGenero_modal(results.genero);
+        setIdioma_modal(results.idioma);
+        setTitulo_modal(results.titulo);
     }
 
     const setEstado = (value) => {
@@ -71,40 +88,28 @@ function SearchModule() {
 
     return (
         <div>
-            <MovieModal movie={actual} open={openModal} flag={estadoInput} onClose={() => showModal(false)}/>
-            {/* <Modal className= "resultModal" isOpen = {openModal}>
-                <div>
-                    <h1>DETALLES DE PELICULA</h1>
-                </div>
-                <div>
-                    <h2 style={{position:'absolute', left:"70%"}}>GENERO</h2>
-                    <input className="inputModal" disabled={estadoInput} style={{position:'absolute',top:"180px", left:"758px", textAlign:"center"}} value={actual.genero}></input>
-                    
-                    <h2 style={{position:'absolute', left:"30px"}}>IDENTIFICADOR:</h2>
-                    <input className="inputModal" disabled={estadoInput} style={{position:'absolute',top:"120px", left:"18%"}} value={actual.peliculaID}></input>
+            <MovieModal 
+                open={openModal} 
+                flag={estadoInput} 
+                onClose={() => showModal(false)}
 
-                    <h2 style={{position:'absolute', left:"30px", top:"160px"}}>TITULO:</h2>
-                    <input className="inputModal" disabled={estadoInput} onChange={(e) => {setTitulo(e.target.value)}} style={{position:'absolute', left:"11%", top:"177px"}} value={actual.titulo}></input>
+                title={title_modal}
+                language={language_modal}
+                genre={genre_modal}
+                mpa_age={mpa_age_modal}
+                running_time={running_time_modal}
+                release_date={release_date_modal}
+                director={director_modal}
+                id={id}
 
-                    <h2 style={{position:'absolute', left:"30px", top:"220px"}}>DIRECTOR:</h2>
-                    <input className="inputModal" disabled={estadoInput} style={{position:'absolute', left:"13%", top:"237px"}} value={actual.director}></input>
-
-                    <h2 style={{position:'absolute', left:"30px", top:"280px"}}>IDIOMA:</h2>
-                    <input className="inputModal" disabled={estadoInput} style={{position:'absolute', left:"10%", top:"297px"}} value={actual.idioma}></input>
-
-                    <h2 style={{position:'absolute', left:"30px", top:"340px"}}>EDAD REQUERIDA:</h2>
-                    <input className="inputModal" disabled={estadoInput} style={{position:'absolute', left:"20%", top:"357px"}} value={actual.edadRequerida}></input>
-
-                    <h2 style={{position:'absolute', left:"30px", top:"400px"}}>FECHA DE ESTRENO:</h2>
-                    <input className="inputModal" disabled={estadoInput} style={{position:'absolute', left:"23%", top:"417px"}} value={actual.fechaEstreno}></input>
-
-                    <h2 style={{position:'absolute', left:"30px", top:"460px"}}>DURACION:</h2>
-                    <input className="inputModal" disabled={estadoInput} style={{position:'absolute', left:"15%", top:"477px"}} value={actual.duracionMin}></input>
-                </div>
-                <div>
-                    <button className='buttons' style={{position: 'absolute', top:"85%", left:"37%"}} onClick={() => showModal(false)}>CERRAR</button>
-                </div>
-            </Modal> */}
+                onChange_director={setDirector_modal}
+                onChange_duration={setDuracion_modal}
+                onChange_age={setEdad_modal}
+                onChange_release_date={setGenero_modal}
+                onChange_language={setIdioma_modal}
+                onChange_genre={setGenero_modal}
+                onChange_title={setTitulo_modal}
+            />
             <div className="manage_movies_container">
                 <div className="_movies_table_container">
                     <table className="_movies_table">
