@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import {useTable} from "react-table";
 import './manage_movies_screen.css'
+import MovieModal from './movie_modal';
 import { searchMovies, deleteMovie } from '../../services/movies';
 
 function SearchModule() {
@@ -59,32 +60,19 @@ function SearchModule() {
         }
     }
 
-    const columns = React.useMemo( () => [
-        {
-            Header:"ID",
-            accessor:"peliculaID",
-        },
-        {
-            Header:"TITULO",
-            accessor:"titulo",
-        }
-    ],
-    []
-    );
-    
-    const {getTableProps, getTableBodyProps, headerGroups, rows, prepareRow} = useTable({columns, data});
 
-    const handleRowClick = (row, value) => {
+    const handleRowClick = (val, value) => {
         setEstado(value);
         showModal(true);
-        setValues(row.original);
-        console.log("ID:", row.original);
+        setValues(val);
+        console.log("ID:", val);
         
     };
 
     return (
         <div>
-            <Modal className= "resultModal" isOpen = {openModal}>
+            <MovieModal movie={actual} open={openModal} flag={estadoInput} onClose={() => showModal(false)}/>
+            {/* <Modal className= "resultModal" isOpen = {openModal}>
                 <div>
                     <h1>DETALLES DE PELICULA</h1>
                 </div>
@@ -116,43 +104,33 @@ function SearchModule() {
                 <div>
                     <button className='buttons' style={{position: 'absolute', top:"85%", left:"37%"}} onClick={() => showModal(false)}>CERRAR</button>
                 </div>
-            </Modal>
+            </Modal> */}
             <div className="manage_movies_container">
                 <div className="_movies_table_container">
-                    <table className="_movies_table"  {...getTableProps()}>
+                    <table className="_movies_table">
                         <thead>
-                            {headerGroups.map((headerGroup)=> (
-                                <tr {...headerGroup.getHeaderGroupProps()} className="_table_header">
-                                    {headerGroup.headers.map((column) => (
-                                        <th {...column.getHeaderProps()}>
-                                            {column.render("Header")}
-                                        </th>
-                                        
-                                    ))}
-                                    <th>OPCIONES </th>
-                                </tr>
-                            ))}
+                            <tr className='_table_tr'>
+                                <th>ID</th>
+                                <th>TITLE</th>
+                                <th style={{width:"400px"}}>ACTIONS</th>
+                            </tr>
                         </thead>
-                        <tbody {...getTableBodyProps()}>
-                            {rows.map((row) => {
-                                prepareRow(row);
+                        <tbody>
+                            {data.map((val, key) => {
                                 return(
-                                    <tr {...row.getRowProps()}>
-                                        {row.cells.map((cell) => (
-                                            <td {...cell.getCellProps()}>
-                                                {cell.render("Cell")}
-                                                
-                                            </td>
-                                        ))}
-                                        <div style={{width:"400px"}}>
-                                            <button className="resultButtons" onClick={() => handleRowClick(row, true)}>VER DETALLES</button>
-                                            <button className="modifyButtons" onClick={() => handleRowClick(row, false)}>MODIFICAR</button>
-                                            <button className="deleteButtons" onClick={() => handleRowDelete(row)}>ELIMINAR</button>
-                                        </div>
+                                    <tr key={key}>
+                                        <td>{val.peliculaID}</td>
+                                        <td>{val.titulo}</td>
+                                        <td>
+                                            <div className='_options_buttons_container'>
+                                                <button className="resultButtons" onClick={() => handleRowClick(val, true)}>View Details</button>
+                                                <button className="modifyButtons" onClick={() => handleRowClick(val, false)}>Modify</button>
+                                                <button className="deleteButtons" onClick={() => handleRowDelete(val)}>Delete</button>
+                                            </div>
+                                        </td>
                                     </tr>
                                 );
                             })}
-
                         </tbody>
                     </table>
                 </div>

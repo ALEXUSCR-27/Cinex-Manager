@@ -13,7 +13,7 @@ export const addMovie = async (movieData) => {
 
 export const searchMovies = async (movieAttr) => {
     try {
-        const response = await api.post(`buscarpeliculas`, movieAttr);
+        const response = await api.post(`/buscarpeliculas`, movieAttr);
         return response
     }
     catch(error) {
