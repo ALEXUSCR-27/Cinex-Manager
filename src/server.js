@@ -1,5 +1,5 @@
 const express = require('express');
-const routes = require('../server-cinetex/routes/index.routes');
+const routes = require('./routes/index.routes');
 const cors = require ('cors');
 
 const app = express();

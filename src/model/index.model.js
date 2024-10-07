@@ -72,5 +72,27 @@ model.buscarPelicula = (values) => {
     });
 }
 
+model.modifyMovie = (values) => {
+    return new Promise((resolve, reject) => {
+        const id = values.body.id;
+        const titulo = values.body.titulo;
+        const idioma = values.body.idioma;
+        const fecha = values.body.fecha;
+        const modifyMovie = "call proceModificarPelicula ("+id+",'"+titulo+"','"+idioma+"','"+fecha+"');";
+        console.log(modifyMovie);
+        db.query(modifyMovie, (err, data) => {
+            if (err) {
+                console.log("[ERROR] => "+err);
+                reject(err);
+            }
+            else {
+                resolve(data);
+            }
+        });
+    });
+
+}
+
+
 
 module.exports = model;

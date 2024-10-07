@@ -32,4 +32,14 @@ controller.eliminarPelicula = (req, res) => {
     });
 }
 
+controller.modifyMovie = (req, res) => {
+    model.modifyMovie(req)
+    .then (response => {
+        res.send(JSON.stringify(response));
+    }).catch(error => {
+        console.error(error);
+        res.status(500).send("Error while trying to modify the movie");
+    });
+}
+
 module.exports = controller;
