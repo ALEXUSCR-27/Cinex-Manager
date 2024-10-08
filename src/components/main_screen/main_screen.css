@@ -1,0 +1,69 @@
+.main_container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 100vh;
+    text-align: center;
+    width: 100%;
+
+}
+
+._title_container {
+    align-items: center;
+    margin-left: 15%;
+    margin-top: 5%;
+}
+
+h1 {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 130px;
+    font-weight: 800;
+    text-align: start;
+    text-shadow: 
+        1px 0px 0px #575656,
+        2px 0px 0px #575656,
+        3px 0px 0px #575656,
+        4px 0px 0px #575656,
+        5px 0px 0px #575656,
+        6px 0px 0px #575656,
+        5px 0px 0px #575656,
+        5px 0px 0px #575656,
+        5px 0px 0px #575656,
+        5px 0px 0px #575656,
+        10px 0px 0px rgba(0, 0, 0, 0.5);
+}
+
+._options_container {
+    align-items: center;
+    background-color: #252525;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    justify-content: center;
+    margin-left: 30%;
+    margin-top: 17%;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    width: 400px;
+
+}
+
+.button_search_movie, .button_add_movie {
+    align-items: center;
+    background-color:rgb(71, 66, 66);
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+    cursor:pointer;
+    display: flex;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    height: 70px;
+    justify-content: center;
+    margin-top: 5%;
+    position: relative;
+    text-decoration: none;
+    width: 300px;
+}
