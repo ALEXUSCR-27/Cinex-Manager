@@ -9,12 +9,14 @@ function MainScreen() {
                     <h1>CINEX CRUD OPERATIONS MANAGER</h1>
                 </div>
                 <div className="_options_container">
-                    <Link to="http://localhost:3000/buscarpeliculas" className='button_search_movie'>
-                        MANAGE MOVIES
-                    </Link>
-                    <Link to="http://localhost:3000/agregarpeliculas" className='button_add_movie'>
-                        ADD NEW MOVIE
-                    </Link>
+                    <div className='_options_link_container'>
+                        <Link to="http://localhost:3000/buscarpeliculas" className='button_search_movie'>
+                            MANAGE MOVIES
+                        </Link>
+                        <Link to="http://localhost:3000/agregarpeliculas" className='button_add_movie'>
+                            ADD NEW MOVIE
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
