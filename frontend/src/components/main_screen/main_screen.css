@@ -1,7 +1,9 @@
 .main_container {
     display: grid;
     grid-template-columns: 50% 50%;
+
     height: 100dvh;
+
     text-align: center;
     width: 100%;
 
@@ -16,7 +18,9 @@
 h1 {
     color: white;
     font-family: "Roboto", sans-serif;
+
     font-size: 8rem;
+
     font-weight: 800;
     text-align: start;
     text-shadow: 
@@ -32,6 +36,7 @@ h1 {
         5px 0px 0px #575656,
         10px 0px 0px rgba(0, 0, 0, 0.5);
 }
+
 
 
 ._options_container {
@@ -54,6 +59,7 @@ h1 {
     gap: 50px;
     justify-items: center;
     align-items: center;
+
 
 }
 
@@ -78,4 +84,5 @@ h1 {
     }
 
 }
+
 
