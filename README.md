@@ -41,3 +41,23 @@ This project is a full-stack web application that enables users to perform Creat
    cd server
    npm install
    ```
+- Set up the database
+  - Create a new MySQL database.
+  - Set up the credentials in `index.model.js` server file.
+  - Execute`Cinema.sql` script. **(Verify the database name in the script)**
+- Run the server
+  ```sh
+  node server.js
+  ```
+- Get back to the frontend folder and execute start command.
+  ```sh
+  npm start
+  ```
+- Visit `http://localhost:3000` to access the frontend interface.
+
+## Acknowledgments
+* [MySQL Installation Guide](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/)
+* [How to install Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs)
+* [Getting Started with MySQL](https://dev.mysql.com/doc/mysql-getting-started/en/)
+
+<p align="center"><a href="#readme-top">Back to top ☝🏼</a></p>
