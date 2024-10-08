@@ -11,6 +11,15 @@
  [![Static Badge](https://img.shields.io/badge/v2.18.1-rgb(43%2C%2093%2C%20128)?label=MySQL)](https://www.mysql.com/)
 </div>
 
- Sitio web con las operaciones basicas de una entidad (CRUD), utilizando como entidad un Cine. De manera que, en este sitio web se gestiona y administra las peliculas de una cartelera de Cine.
+## About the project
 
+This project is a full-stack web application that enables users to perform Create, Read, Update, and Delete (CRUD) operations on cinema movie entities, the application provides a user-friendly interface for managing movie data such as titles, genres, directors, languages, release dates and more.
+
+## Features
+- **Create** new movie entries with details such as Title, Language, Director, Genre, Release date, Running time, MPA age.
+- **Read** and display a list of movies, allowing users to view detailed information about each one.
+- **Update** existing movie entries to edit attributes such as Title, Language, Release date and MPA age of a specific movie.
+- **Delete** movies from the database when they are no longer needed.
+- Responsive and intuitive UI for ease of use.
+- Real-time interaction with a MySQL database using a REST API.
  
