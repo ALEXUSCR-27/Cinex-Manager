@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import './manage_movies_screen.css'
 import MovieModal from './movie_modal';
-import { searchMovies, deleteMovie } from '../../services/movies';
+import { searchMovies, deleteMovie, modifyMovie } from '../../services/movies';
 
 function SearchModule() {
     
@@ -30,7 +30,6 @@ function SearchModule() {
 
     const setValues = (results) => {
         setActual(results);
-
         setID(results.peliculaID)
         setDirector_modal(results.director);
         setDuracion_modal(results.duracionMin);
@@ -68,6 +67,13 @@ function SearchModule() {
         }
     }
 
+    const handleModifyMovie = async (movieAttr) => {
+        const request_response = await modifyMovie(movieAttr);
+        if (request_response.status === 200) {
+            console.log(request_response) // recargar tabla
+        }
+    }
+
     const handleRowDelete = async (row) => {
         const movieID = {peliculaID:row.original.peliculaID}
         const request_reponse = await deleteMovie(movieID);
@@ -92,13 +98,14 @@ function SearchModule() {
                 open={openModal} 
                 flag={estadoInput} 
                 onClose={() => showModal(false)}
+                onClickModify={handleModifyMovie}
 
                 title={title_modal}
                 language={language_modal}
                 genre={genre_modal}
                 mpa_age={mpa_age_modal}
                 running_time={running_time_modal}
-                release_date={release_date_modal}
+                release_date={release_date_modal.slice(0, 10)}
                 director={director_modal}
                 id={id}
 

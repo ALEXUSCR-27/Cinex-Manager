@@ -23,7 +23,17 @@ export const searchMovies = async (movieAttr) => {
 
 export const deleteMovie = async (movieID) => {
     try {
-        const response = await api.post(`eliminarPelicula`, movieID);
+        const response = await api.post(`/eliminarPelicula`, movieID);
+        return response
+    }
+    catch(error) {
+        console.error("ERROR => ", error)
+    }
+};
+
+export const modifyMovie = async (movieAttr) => {
+    try {
+        const response = await api.post(`/modifyMovie`, movieAttr);
         return response
     }
     catch(error) {

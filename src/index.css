@@ -8,6 +8,8 @@ body {
     height: 100%;
     width: 100%;
     background-color: #121212;
+    background-image: url(/public/images/bg1.svg);
+    background-size: cover;
 }
 
 code {

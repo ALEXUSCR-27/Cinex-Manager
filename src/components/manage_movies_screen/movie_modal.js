@@ -3,6 +3,7 @@ function MovieModal({
     open, 
     flag, 
     onClose,
+    onClickModify,
     title,
     language,
     genre,
@@ -85,7 +86,7 @@ function MovieModal({
                     <div className='_input_group_modal'>
                         <label>Release date:</label>
                         <input 
-                            type='datetime'
+                            type='date'
                             className="inputModal" 
                             disabled={flag} 
                             value={release_date}
@@ -108,7 +109,15 @@ function MovieModal({
             <div className='_button_container_modal'>
                 <button className='_search_button' onClick={() => onClose(false)}>Close</button>
                 { !flag && (
-                    <button className='_modify_button' onClick={() => onClose(false)}>Modify</button>
+                    <button 
+                        className='_modify_button' 
+                        onClick={() => onClickModify({
+                            id:id,
+                            titulo:title,
+                            idioma:language,
+                            fecha:release_date
+                        })}
+                    >Modify</button>
                 )}
             </div>
         </Modal>
