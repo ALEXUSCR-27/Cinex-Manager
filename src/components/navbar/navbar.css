@@ -1,0 +1,35 @@
+nav {
+    background-color: transparent;
+    height: 100px;
+    width: 100%;
+}
+
+.button_home {
+    background-color: transparent;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    left: 8%;
+    position: relative;
+    text-decoration: none;
+    top: 50px;
+}
+
+img {
+    padding: 10px;
+    position: relative;
+}
+
+.logo {
+    background-image: url(/public/images/logo.png);
+    background-position: center;
+    height: 70px;
+    left: 2%;
+    padding: 10px;
+    position: relative;
+    width:300px;
+    
+}
