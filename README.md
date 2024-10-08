@@ -15,6 +15,12 @@
 
 This project is a full-stack web application that enables users to perform Create, Read, Update, and Delete (CRUD) operations on cinema movie entities, the application provides a user-friendly interface for managing movie data such as titles, genres, directors, languages, release dates and more.
 
+<br/>
+
+<div align="center">
+ <img src="images/Screenshot1.png"/>
+</div>
+
 ## Features
 - **Create** new movie entries with details such as Title, Language, Director, Genre, Release date, Running time, MPA age.
 - **Read** and display a list of movies, allowing users to view detailed information about each one.
