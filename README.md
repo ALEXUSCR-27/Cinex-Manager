@@ -23,3 +23,21 @@ This project is a full-stack web application that enables users to perform Creat
 - Responsive and intuitive UI for ease of use.
 - Real-time interaction with a MySQL database using a REST API.
  
+## Getting started
+
+### To get the project running locally:
+ - Install Node.js and MySQL
+ - Clone the repository
+   ```sh
+     git clone https://github.com/ALEXUSCR-27/Cinex-Manager.git
+     cd Cinex-Manager
+   ```
+- Install frontend dependencies
+  ```sh
+  npm install
+  ```
+ - Install backend dependencies
+   ```sh
+   cd server
+   npm install
+   ```
