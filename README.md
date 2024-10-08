@@ -34,11 +34,12 @@ This project is a full-stack web application that enables users to perform Creat
    ```
 - Install frontend dependencies
   ```sh
+  cd frontend
   npm install
   ```
- - Install backend dependencies
+ - Go back and install backend dependencies
    ```sh
-   cd server
+   cd ../backend
    npm install
    ```
 - Set up the database
@@ -49,10 +50,12 @@ This project is a full-stack web application that enables users to perform Creat
   ```sh
   node server.js
   ```
-- Get back to the frontend folder and execute start command.
+- Go back to the frontend folder and execute start command.
   ```sh
+  cd ../frontend
   npm start
   ```
+  ***Important!* Execute frontend and backend in different terminals.**
 - Visit `http://localhost:3000` to access the frontend interface.
 
 ## Acknowledgments
